@@ -1,0 +1,21 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default;
+ }
+
+ @plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-primary: #F9A51A;
+  --color-secondary: #6A6A6A;
+  --color-accent: #2B2B2B;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
