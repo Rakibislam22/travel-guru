@@ -1,13 +1,17 @@
 import React from 'react';
 import logo from '/logo.png';
+import { Link, NavLink, useLocation } from 'react-router';
 
 const Navbar = () => {
+
+    const location = useLocation();
+
     return (
         <div className="pt-5 flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-10">
             {/* Left side: Logo + Search */}
             <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-15 w-full sm:w-auto">
                 <div className="w-28">
-                    <img className="invert" src={logo} alt="Logo" />
+                    <Link to={"/"}><img className={location.pathname ==="/login" || location.pathname ==="/signup" ? "" :"invert"} src={logo} alt="Logo" /></Link> 
                 </div>
 
                 <div className="w-full sm:w-auto mt-2 sm:mt-0">
@@ -40,12 +44,12 @@ const Navbar = () => {
 
             {/* Right side: Menu items */}
             <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-10 font-medium mt-3 sm:mt-0">
-                <p className="text-sm sm:text-base">News</p>
-                <p className="text-sm sm:text-base">Destination</p>
-                <p className="text-sm sm:text-base">Blog</p>
-                <p className="text-sm sm:text-base">Contact</p>
+                <p className="text-sm sm:text-base"><NavLink>News</NavLink></p>
+                <p className="text-sm sm:text-base"><NavLink>Destination</NavLink></p>
+                <p className="text-sm sm:text-base"><NavLink>Blog</NavLink></p>
+                <p className="text-sm sm:text-base"><NavLink>Contact</NavLink></p>
                 <button className="btn btn-primary text-black py-2 px-4 sm:py-3 sm:px-6 text-sm sm:text-base">
-                    Login
+                    <Link to={"/login"}>Login</Link>
                 </button>
             </div>
         </div>

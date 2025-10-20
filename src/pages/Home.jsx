@@ -7,6 +7,7 @@ import sreemangal from '../assets/Sreemongol.png';
 import sundarbans from '../assets/sundorbon.png';
 import { BsArrowRight } from 'react-icons/bs';
 import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
+import { Link } from 'react-router';
 
 const Home = () => {
     const places = [
@@ -41,7 +42,7 @@ const Home = () => {
 
             <div className="w-11/12 mx-auto relative text-white">
                 <Navbar />
-                <div className="md:py-50 py-15 z-10 flex flex-col md:flex-row justify-between items-start h-full gap-15">
+                <div className="md:py-35 py-15 z-10 flex flex-col md:flex-row justify-between items-start h-full gap-15">
 
                     {/* Left side text */}
                     <div className="space-y-6">
@@ -49,8 +50,8 @@ const Home = () => {
                         <p className="max-w-[450px]">
                             Cox's Bazar is a city, fishing port, tourism centre and district headquarters in southeastern Bangladesh. It is famous mostly for its long natural sandy beach, and it ...
                         </p>
-                        <button className="btn btn-primary py-5 px-8 text-black text-lg flex items-center gap-2">
-                            Booking <BsArrowRight className="ml-1 mt-1" />
+                        <button className="btn btn-primary py-5 px-7 text-black text-lg flex items-center gap-2">
+                            <Link to={"/booking"} className='flex justify-center items-center gap-3'>Booking <BsArrowRight/></Link>
                         </button>
                     </div>
 
